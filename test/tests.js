@@ -2,10 +2,12 @@
 import {
     addExclamationPoints,
     divideThenMultiply,
+    makeLuckyGreeting,
     multiplyBy12ThenHalve,
     multiplyBySeven,
     myFunction,
     returnAsAnArray,
+    returnAsAString,
 } from '../functions.js';
 
 const { test, skip } = QUnit;
@@ -100,4 +102,18 @@ test('takes three numbers and returns them in an array', (expect) => {
     const expected3 = [6, 7, 3];
     const actual3 = returnAsAnArray(6, 7, 3);
     expect.deepEqual(actual3, expected3);
+});
+
+test('returns a greeting that sums two nums', (expect) => {
+    const expected = 'Hello! Your lucky number for the day is 12';
+    const actual = makeLuckyGreeting(6, 6);
+    expect.equal(actual, expected);
+
+    const expected2 = 'Hello! Your lucky number for the day is 1578293';
+    const actual2 = makeLuckyGreeting(1578292, 1);
+    expect.equal(actual2, expected2);
+
+    const expected3 = 'Hello! Your lucky number for the day is 2';
+    const actual3 = makeLuckyGreeting(-2, 4);
+    expect.equal(actual3, expected3);
 });
