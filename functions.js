@@ -162,7 +162,9 @@ Output:
 */
 
 export function renderDogLI(dog) {
-    return true;
+    const li = document.createElement('LI');
+    li.innerText = dog.name;
+    return `<li>${dog.name}</li>`;
 }
 
 // This function should take a dog object and return a div with the dog's information
