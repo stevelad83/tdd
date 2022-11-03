@@ -146,7 +146,7 @@ Output:
 */
 
 export function getLastItem(array) {
-    return true;
+    return array.pop();
 }
 
 // This function should take a dog object and return an <li> with the name of the dog
